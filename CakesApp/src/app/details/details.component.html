@@ -1,0 +1,26 @@
+<div class="list">
+<div class="row">
+  <div class="col-md-6">
+      <div *ngIf="currentCake">
+        <h2>Cake Details</h2>
+        <div>
+          <label><strong>Name:</strong></label> {{ currentCake.name }}
+        </div>
+        <div>
+          <label><strong>Comment:</strong></label>
+          {{ currentCake.comment }}
+        </div>
+        <div>
+            <label><strong>Yum Factor:</strong></label>
+            {{ currentCake.yumFactor }}
+        </div>
+      </div>
+
+      <div *ngIf="!currentCake">
+        <br />
+        <p>Please click on a Cake.</p>
+      </div>
+    </div>
+</div>
+  <button class="btn-primary" routerLink="/">Go Back</button>  
+</div>

@@ -1,0 +1,28 @@
+<div class="submit-form">
+    <h1>Create Cake</h1>
+    <form (ngSubmit)="submitForm()" #cakeForm="ngForm">
+        <div *ngIf="pageErrors.length > 0">
+            <span class="error">{{pageErrors}}</span>
+        </div>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" #name="ngModel"  [(ngModel)]="cake.name" name="name" class="form-control" maxlength="20" required>
+            <span *ngIf="name.touched && name.invalid" class="error">Name is required</span>
+        </div>
+        <div class="form-group">
+            <label>Comment</label>
+            <textarea #comment="ngModel" class="form-control" [(ngModel)]="cake.comment" name="comment" rows="3" maxlength="200" minlength="5" required></textarea>
+            <span *ngIf="comment.touched && comment.invalid" class="error">Comment is required with minimum length of 5 and a maximum length of 255</span>
+        </div>
+        <div class="form-group">
+            <label>Image Url</label>
+            <input #imageurl="ngModel" type="text" [(ngModel)]="cake.imageUrl" name="imageUrl" class="form-control" required>
+            <span *ngIf="imageurl.touched && imageurl.invalid" class="error">Image Url is required</span>
+        </div>
+        <div class="form-group">
+            <label>Yum Factor</label>
+            <input type="number" [(ngModel)]="cake.yumFactor" name="yumFactor" class="form-control" min="1" max="5" onkeydown="return false">
+        </div>
+        <button [disabled]="!cakeForm.valid" type="submit" class="btn-primary"> Submit </button>
+    </form>
+</div>

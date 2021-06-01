@@ -1,0 +1,26 @@
+<div class="list row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6  mt-4">
+                <h1>Cakes List</h1>
+            </div>
+            <div class="col-md-6 mt-4">
+                <button type="button" class="btn-primary" [routerLink]="['/create/']">Create new cake</button>
+            </div>
+        </div>
+        <ul class="list-group">
+            <li
+                class="list-group-item"
+                *ngFor="let cake of cakes; let i = index"
+                [class.active]="i == currentIndex"
+                (click)="setActiveCake(cake, i)">
+                <table>
+                <td style="width: 30%;">{{ cake.imageUrl }}</td>
+                <td style="width: 30%;">{{ cake.name }}</td>
+                <td style="width: 30%;"><button class="m-3 btn btn-sm btn-danger" (click)="deleteCake(cake.id)">Remove</button> 
+                    <a class="m-3 btn btn-sm btn-primary" routerLink="/detail/{{ cake.id }}">View</a></td>
+                </table>  
+            </li>
+        </ul>
+    </div>
+  </div>
