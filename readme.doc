@@ -1,0 +1,20 @@
+Prerequisites 
+
+* Visual Studio 2019 (.Net Core 3.1)
+* NODE JS
+
+Running CakesApi
+1) Open the solution file in visual studio
+2) Make sure 'CakesApi' application is running on ‘https://localhost:44355/’
+3) Change the connection string property as per your requirements 
+		"ConnectionStrings": {
+		    "DefaultConnection": "Server=DESKTOP-					7R4VH3B;Database=CakesDb;Trusted_Connection=True;MultipleActiveResultSets=true"
+  	}
+4) Open package manage console and run the command ‘Update-Database’. This will create the Database on your machine. Now Run the API project and you will see Swagger Page loaded
+		
+Running CakesApp (UI)
+
+1) Open Command Line and browse to the root directory of the project where “package.json” file is located.
+2) Execute this command ‘npm install’
+3) Once package installation is complete then run the command ‘ng serve’
+		
